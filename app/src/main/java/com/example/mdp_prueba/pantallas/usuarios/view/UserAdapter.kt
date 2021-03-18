@@ -11,6 +11,7 @@ import butterknife.BindView
 import butterknife.ButterKnife
 import com.example.mdp_prueba.R
 import com.example.mdp_prueba.helper.inflate
+import com.example.mdp_prueba.helper.setImageCircular
 import com.example.mdp_prueba.pantallas.usuarios.model.datos.User
 
 class UserAdapter(val listener: OnCardListener): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -50,6 +51,7 @@ class UserAdapter(val listener: OnCardListener): RecyclerView.Adapter<RecyclerVi
         ) {
             ButterKnife.bind(this, itemView)
 
+            imgUser.setImageCircular(R.mipmap.nouser, "https://www.grandespymes.com.ar/wp-content/uploads/2020/11/Fotolia_23533273_Subscription_L.jpg")
             txtTitulo.text = "${user.name} (${user.username})"
             txtDireccion.text = "${user.address.street}, ${user.address.city}"
             txtTelefono.text = user.phone

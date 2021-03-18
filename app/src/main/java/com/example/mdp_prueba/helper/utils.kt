@@ -5,11 +5,14 @@ import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import com.example.mdp_prueba.R
+import com.example.mdp_prueba.helper.picasso.CircleTransform
 import com.example.mdp_prueba.root.MyApp
 import com.google.android.material.snackbar.Snackbar
+import com.squareup.picasso.Picasso
 
 val Int.dp: Int
     get() = (this * Resources.getSystem().displayMetrics.density + 0.5f).toInt()
@@ -35,4 +38,24 @@ fun View.showSnackbar(message: String, duration: Int = Snackbar.LENGTH_LONG, mar
 
 fun ViewGroup.inflate(layoutRes : Int): View {
     return LayoutInflater.from(context).inflate(layoutRes, this, false)
+}
+
+fun ImageView.setImageCircular(placeHolder: Int, url: String?, drawable: Int? = null) {
+    if (url == null && drawable != null) {
+        Picasso.get()
+            .load(drawable)
+            .placeholder(placeHolder)
+            .transform(CircleTransform())
+            .centerCrop()
+            .fit()
+            .into(this)
+    } else {
+        Picasso.get()
+            .load(url)
+            .placeholder(placeHolder)
+            .transform(CircleTransform())
+            .centerCrop()
+            .fit()
+            .into(this)
+    }
 }

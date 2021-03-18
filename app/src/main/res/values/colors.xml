@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="color_skeleton">#efefef</color>
     <color name="color_shimmer_skeleton">#ffffff</color>
+    <color name="background_color">#f4f8f9</color>
 </resources>

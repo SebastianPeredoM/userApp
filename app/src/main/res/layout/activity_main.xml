@@ -6,6 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_color"
     tools:context=".pantallas.usuarios.view.UserActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -13,7 +14,7 @@
         android:layout_height="56dp"
         android:background="?attr/colorPrimary"
         android:layout_width="0dp"
-        app:title="Garlix"
+        app:title="Prueba"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
